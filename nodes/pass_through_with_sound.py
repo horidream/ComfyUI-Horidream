@@ -105,6 +105,6 @@ class PassThroughWithSound:
             self.show_alert("done!!")
         return (input,)
 
-    def IS_CHANGED(s, input, sound_file_path):
+    def IS_CHANGED(s, input, sound_file_path, show_alert):
         # return str(input) + sound_file_path
         return ""
