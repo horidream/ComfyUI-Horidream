@@ -70,7 +70,8 @@ class PassThroughWithSound:
                 [
                     "powershell",
                     "-Command",
-                    f"[System.Windows.MessageBox]::Show('{message}')",
+                    "Add-Type -AssemblyName PresentationFramework; "
+                    f"[System.Windows.MessageBox]::Show('{message}')"
                 ]
             )
         elif current_os == "Darwin":  # macOS
@@ -108,3 +109,14 @@ class PassThroughWithSound:
     def IS_CHANGED(s, input, sound_file_path, show_alert):
         # return str(input) + sound_file_path
         return ""
+
+if __name__ == "__main__":
+    message = "hi"
+    subprocess.run(
+                [
+                    "powershell",
+                    "-Command",
+                    "Add-Type -AssemblyName PresentationFramework; "
+                    f"[System.Windows.MessageBox]::Show('{message}')"
+                ]
+            )
